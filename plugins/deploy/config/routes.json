@@ -1,0 +1,20 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/deploy-to-staging",
+      "handler": "deploy.deployToStaging",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/deploy-to-production",
+      "handler": "deploy.deployToProduction",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
