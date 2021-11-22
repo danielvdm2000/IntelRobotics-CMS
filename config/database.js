@@ -2,7 +2,7 @@ const { parse } = require('pg-connection-string');
 
 const DATABASE_URL = "postgresql://doadmin:5xc7RoIqQl5Iloys@intel-robotics-db-do-user-10017906-0.b.db.ondigitalocean.com:25060/defaultdb?sslmode=require";
 
-module.exports = ({ env }) => {
+module.exports = () => {
   const config = parse(DATABASE_URL);
 
   return {
