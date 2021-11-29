@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "products",
   "info": {
-    "name": "Product"
+    "name": "Product",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -12,10 +13,12 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "description": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "images": {
       "collection": "file",
@@ -24,7 +27,17 @@
         "images"
       ],
       "plugin": "upload",
-      "required": false,
+      "required": true,
+      "pluginOptions": {}
+    },
+    "previewImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
       "pluginOptions": {}
     }
   }

@@ -1,15 +1,42 @@
 'use strict';
 
 module.exports = {
-  'deployToStaging': async (ctx) => {
+  'deployToTestEnvironment': async ctx => {
+    const deployService = strapi.plugins.deploy.services.deploy;
+  
+    await deployService.deployTest();
+
+    ctx.send({
+      message: 'ok',
+    });
+  },
+  'isTestBuilding': async ctx => {
+    const deployService = strapi.plugins.deploy.services.deploy;
+    
+    const building = await deployService.isTestBuilding();
+
+    ctx.send({
+      building,
+      message: 'ok',
+    });
+  },
+  'deployToProductionEnvironment': async ctx => {
+    const deployService = strapi.plugins.deploy.services.deploy;
+
+    await deployService.deployProduction();
 
     ctx.send({
       message: 'ok'
     });
   },
-  'deployToProduction': async ctx => {
+  'isProductionBuilding': async ctx => {
+    const deployService = strapi.plugins.deploy.services.deploy;
+
+    const building = await deployService.isProductionBuilding();
+
     ctx.send({
-      message: 'ok'
+      building,
+      message: 'ok',
     });
   },
 };

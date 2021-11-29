@@ -1,17 +1,33 @@
 {
   "routes": [
     {
-      "method": "GET",
-      "path": "/deploy-to-staging",
-      "handler": "deploy.deployToStaging",
+      "method": "POST",
+      "path": "/deploy-test",
+      "handler": "deploy.deployToTestEnvironment",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/deploy-production",
+      "handler": "deploy.deployToProductionEnvironment",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/deploy-to-production",
-      "handler": "deploy.deployToProduction",
+      "path": "/is-test-building",
+      "handler": "deploy.isTestBuilding",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/is-production-building",
+      "handler": "deploy.isProductionBuilding",
       "config": {
         "policies": []
       }

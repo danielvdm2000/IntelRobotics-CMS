@@ -1,13 +1,11 @@
 import React, { memo } from 'react';
+import ActionPanel from '../../components/ActionPanel';
 
-const HomePage = () => {
-  return (
-    <div>
-      <h1>Deploy the Application</h1>
-      <button>Deploy preview</button>
-      <button>Deploy preview to Production</button>
-    </div>
-  );
-};
+const HomePage = () => (
+  <div style={{ padding: '20px' }}>
+    <h1>Deploy the Application</h1>
+    <ActionPanel />
+  </div>
+);
 
 export default memo(HomePage);
